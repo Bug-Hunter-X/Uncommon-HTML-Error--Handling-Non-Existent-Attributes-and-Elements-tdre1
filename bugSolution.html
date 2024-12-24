@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error Solution</title>
+</head>
+<body>
+  <div id="myDiv" data-my-attribute="test"></div>
+  <script>
+    //Correct way to access attribute, checking for its existence first
+    let element = document.getElementById('myDiv');
+    let myVar = element && element.hasAttribute('data-my-attribute') ? element.getAttribute('data-my-attribute') : null; 
+    console.log(myVar); // Outputs 'test'
+    
+    //Checking if element exists before manipulating its style
+    let nonExistentElement = document.getElementById('nonExistent');
+    if (nonExistentElement) {
+      nonExistentElement.style.display = 'none';
+    } else {
+      console.log('Element does not exist'); //Handle gracefully
+    }
+  </script>
+</body>
+</html>
