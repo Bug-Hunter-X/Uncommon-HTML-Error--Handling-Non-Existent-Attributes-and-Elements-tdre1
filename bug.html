@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    //Incorrect way to access a non-existing attribute
+    let myVar = document.getElementById('myDiv').getAttribute('data-does-not-exist');
+    console.log(myVar); // Outputs null, which might not always be handled correctly
+
+    //Another potential issue
+    document.getElementById('nonExistent').style.display = 'none'; // Throws an error because the element doesn't exist
+  </script>
+</body>
+</html>
